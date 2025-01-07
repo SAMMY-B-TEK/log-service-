@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "2be5c9e6-9e29-4e6a-aa79-72da3b9ae831",
+		"name": "log services ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27721744",
+		"_collection_link": "https://gold-station-427911.postman.co/workspace/My-Workspace~b1130626-ebff-46aa-87b3-fcd73c3498e7/collection/27721744-2be5c9e6-9e29-4e6a-aa79-72da3b9ae831?action=share&source=collection_link&creator=27721744"
+	},
+	"item": [
+		{
+			"name": "secondary service endPoint",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "e70d354a-b0c5-46bd-8553-dac4f1dca620",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8033/sec-logger/mobile/sami.younis@yahoo.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8033",
+					"path": [
+						"sec-logger",
+						"mobile",
+						"sami.younis@yahoo.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "main service with external call ",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8022/main/mobile/sami.younis@yahoo.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8022",
+					"path": [
+						"main",
+						"mobile",
+						"sami.younis@yahoo.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "main service get email by filter ",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8022/main/email?request=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8022",
+					"path": [
+						"main",
+						"email"
+					],
+					"query": [
+						{
+							"key": "request",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

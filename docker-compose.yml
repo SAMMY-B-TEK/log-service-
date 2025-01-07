@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  service-main:
+    image: samiyounis01/mainloggerservice:v1.0 # Use the pre-built image for the main service
+    ports:
+      - "8022:8022" # Expose port 8022 for the main service
+    environment:
+      - external_host=service-secondary # Set external_host to the service name of the secondary service
+    depends_on:
+      - service-secondary # Ensure the secondary service is up before the main service starts
+    networks:
+      - logger # Assign the service to the custom network
+
+  service-secondary:
+    image: samiyounis01/secondaryservice:v1.0 # Use the pre-built image for the secondary service
+    ports:
+      - "8033:8033" # Expose port 8033 for the secondary service
+    environment:
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://tempo:4317
+      - OTEL_METRICS_EXPORTER=none
+    networks:
+      - logger # Assign the service to the custom network
+
+networks:
+  logger:
+    driver: bridge # Using the default bridge driver for the network

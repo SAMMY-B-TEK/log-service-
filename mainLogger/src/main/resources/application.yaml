@@ -1,0 +1,19 @@
+server:
+  port: 8022
+spring:
+  application:
+    name: main-logger
+
+logging:
+  level:
+    com:
+      mainlogger:
+        service: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+
+external:
+  service:
+    host: ${SECONDARY_SERVICE_HOST:default-value}
+    username: user
+    password: password
