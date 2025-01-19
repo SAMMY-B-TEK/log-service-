@@ -27,8 +27,3 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/secondaryService/Dockerfile'
         tags: |
           $(tag)
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'secondaryservice'
-        repository: 'samiyounis01/secondaryservice'
-        command: 'push'
